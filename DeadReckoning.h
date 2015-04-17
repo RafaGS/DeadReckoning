@@ -9,29 +9,29 @@
 #ifndef __linux__
 #include <Arduino.h>
 #endif
-#include <cmath>
+#include <math.h>
 
 class DeadReckoning
 {
     public:
         DeadReckoning(float diametro_rueda, float distancia_eje, int resolucionEncoder);
         ~DeadReckoning();
-        bool calculaDesplazamiento(int pulsosD, int pulsosI);
+        bool calculaDesplazamiento(int pulsosD, int pulsosI); // actualiza los valores de coordenadas y orientación del robot a partir de las lecturas de cada codificador
 
-        void resetDesplazamiento();
-        void setObjetivo(float x, float y);
+        void resetDesplazamiento(); // pone a cero los valores de coordenadas y orientación del robot
+        void setObjetivo(float x, float y); // indica un objetivo o referencia respecto al punto de partida
         
-        float getActualX();
-        float getActualY();
-        float getActualTheta();
-        float getDistanciaRecorrida();
-        float getIzqX(); // posición de las ruedas
-        float getIzqY();
-        float getDerX();
-        float getDerY();
-        float getContadorTheta(float angulo);
+        float getActualX(); // devuelve el valor actual de x
+        float getActualY(); // devuelve el valor actual de y
+        float getActualTheta(); // devuelve el valor actual de orientación
+        float getDistanciaRecorrida(); // devuelve el valor de la distancia total recorrida por el robot
+        float getIzqX(); // posición de las ruedas: devuelve la posición x del lateral izquierdo del robot
+        float getIzqY(); // devuelve la posición y del lateral izquierdo del robot
+        float getDerX(); // devuelve la posición x del lateral derecho del robot
+        float getDerY(); // devuelve la posición y del lateral derecho del robot
+        float getContadorTheta(float angulo); // indica las lecturas necesarias de los codificadores (referente al izquierdo) para asegurar el giro indicado en la variable angulo
 
-        bool isFinal();
+        bool isFinal(); // indica si se ha alcanzado el objetivo marcado con setObjetivo()
         float getOrientacionObjetivo(); // indica orientación relativa para dirigirse al objetivo
 
     private:
