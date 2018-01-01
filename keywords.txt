@@ -1,0 +1,15 @@
+DeadReckoning 	 KEYWORD1
+calculaDesplazamiento 	 KEYWORD2
+resetDesplazamiento 	 KEYWORD2
+setObjetivo 	 KEYWORD2
+getActualX 	 KEYWORD2
+getActualY 	 KEYWORD2
+getActualTheta 	 KEYWORD2
+getDistanciaRecorrida 	 KEYWORD2
+getIzqX 	 KEYWORD2
+getIzqY 	 KEYWORD2
+getDerX 	 KEYWORD2
+getDerY 	 KEYWORD2
+getContadorTheta 	 KEYWORD2
+isFinal 	 KEYWORD2
+getOrientacionObjetivo 	 KEYWORD2
